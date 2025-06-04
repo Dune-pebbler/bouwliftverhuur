@@ -1168,6 +1168,11 @@ header .logo {
   justify-content: center;
   transition: 230ms all cubic-bezier(0.25, 0.8, 0.25, 1);
 }
+@media (max-width: 768px) {
+  header .logo {
+    display: none;
+  }
+}
 @media (max-width: 1199px) {
   header .logo {
     max-width: 320px;
@@ -1179,7 +1184,8 @@ header .logo a {
   padding: 0;
   margin: 0;
 }
-header .logo a svg, header .logo a img {
+header .logo a svg,
+header .logo a img {
   position: relative;
   border-radius: 0;
   top: 50%;
@@ -1200,7 +1206,8 @@ header.scrolling-down {
     top: 100% !important;
   }
 }
-header.scrolling-down .contact-options a i, header.scrolling-down .contact-options button i {
+header.scrolling-down .contact-options a i,
+header.scrolling-down .contact-options button i {
   padding: 9px;
   font-size: 18px;
 }
@@ -1212,7 +1219,8 @@ header .contact-options {
   top: 50%;
   transform: translateY(-50%);
 }
-header .contact-options a, header .contact-options button {
+header .contact-options a,
+header .contact-options button {
   padding: 4px;
   border: 2px solid #fff;
   background-color: transparent;
@@ -1221,7 +1229,8 @@ header .contact-options a, header .contact-options button {
   cursor: pointer;
   transition: 230ms all cubic-bezier(0.25, 0.8, 0.25, 1);
 }
-header .contact-options a i, header .contact-options button i {
+header .contact-options a i,
+header .contact-options button i {
   padding: 14px;
   font-size: 20px;
   color: #fff;
@@ -1230,15 +1239,18 @@ header .contact-options a i, header .contact-options button i {
   transition: 230ms all cubic-bezier(0.25, 0.8, 0.25, 1);
 }
 @media (max-width: 576px) {
-  header .contact-options a i, header .contact-options button i {
+  header .contact-options a i,
+  header .contact-options button i {
     font-size: 16px;
     padding: 8px;
   }
 }
-header .contact-options a:hover, header .contact-options button:hover {
+header .contact-options a:hover,
+header .contact-options button:hover {
   border-color: #e97a25;
 }
-header .contact-options a:hover i, header .contact-options button:hover i {
+header .contact-options a:hover i,
+header .contact-options button:hover i {
   background-color: #fff;
   color: #e97a25;
 }
@@ -1680,6 +1692,7 @@ main .obligation-free-quote {
   }
   main .obligation-free-quote .girls {
     height: 400px;
+    max-width: calc(100% - 30px);
   }
 }
 main .obligation-free-quote .container .row .obligation-content {

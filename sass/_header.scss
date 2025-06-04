@@ -8,7 +8,7 @@ header {
   background-color: $kleur2;
   height: $header-height;
   @include transition();
-  
+
   .container {
     position: relative;
     height: 100%;
@@ -25,7 +25,7 @@ header {
       right: 15px;
       @include transition();
 
-      @media(max-width: $screen-md-max){
+      @media (max-width: $screen-md-max) {
         position: fixed;
         display: block;
         top: unset;
@@ -51,21 +51,25 @@ header {
     float: left;
     height: 100%;
     width: 100%;
-    
+
     @include center();
     @include transition();
 
-    @media (max-width: $screen-lg-max){
+    @media (max-width: $screen-sm-max) {
+      display: none;
+    }
+    @media (max-width: $screen-lg-max) {
       max-width: 320px;
     }
-    
+
     a {
       height: 100%;
       width: 100%;
       padding: 0;
       margin: 0;
 
-      svg, img {
+      svg,
+      img {
         position: relative;
         border-radius: 0;
         top: 50%;
@@ -80,18 +84,18 @@ header {
 
   &.scrolling-down {
     padding: 0 0;
-    box-shadow: 0 0 8px rgba(40, 40, 40, .5);
+    box-shadow: 0 0 8px rgba(40, 40, 40, 0.5);
     height: calc(#{$header-height} - 60px);
 
     > .container .offerte-container {
-      @media(min-width: $screen-md-max){
+      @media (min-width: $screen-md-max) {
         top: 100% !important;
       }
-
     }
-    
+
     .contact-options {
-      a, button {
+      a,
+      button {
         i {
           padding: 9px;
           font-size: 18px;
@@ -108,7 +112,8 @@ header {
     top: 50%;
     transform: translateY(-50%);
 
-    a, button {
+    a,
+    button {
       padding: 4px;
       border: 2px solid $white;
       background-color: transparent;
@@ -125,7 +130,7 @@ header {
         border-radius: 500px;
         @include transition();
 
-        @media(max-width: $screen-xs-max){
+        @media (max-width: $screen-xs-max) {
           font-size: 16px;
           padding: 8px;
         }
@@ -138,7 +143,7 @@ header {
           background-color: $white;
           color: $kleur1;
         }
-      }   
+      }
     }
 
     #launch-search {
@@ -151,9 +156,9 @@ header {
     }
   }
 
-  @media(max-width: $screen-xs-max) {
+  @media (max-width: $screen-xs-max) {
     padding: 0 0;
-    box-shadow: 0 0 8px rgba(40, 40, 40, .5);
+    box-shadow: 0 0 8px rgba(40, 40, 40, 0.5);
     height: calc(#{$header-height} - 60px);
 
     .contact-options a i {
