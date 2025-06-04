@@ -20,8 +20,7 @@ jobs:
           protocol: ftp
           port: 21
           security: loose
-          timeout: 180000
-          connection-mode: passive  
+          timeout: 180000 
           exclude: |
             **/.git*
             **/.git*/**
