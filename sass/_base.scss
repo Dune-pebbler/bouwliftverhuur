@@ -1,0 +1,473 @@
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body, html {
+  padding: 0;
+  margin: 0;
+  font-family: $font; // vul deze in de variables.scss in.
+  font-size: 16px;
+  line-height: 150%;
+}
+
+body {
+	overflow-x: hidden;
+}
+
+a {
+  display: inline-block;
+  text-decoration: none;
+  color: $kleur1;
+  text-decoration: underline;
+  &:hover {
+    color: $kleur2;
+    text-decoration: underline;
+  }
+}
+
+p {
+  color: $text-color;
+  font-size: 18px;
+  margin-bottom: 30px;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  color: $kleur1;
+  font-weight: 400;
+  margin-top: 30px;
+  font-family: $h-font;
+  margin-bottom: 20px;
+  line-height: 100%;
+}
+
+h1 {
+  font-size: 55px;
+}
+
+h2 { 
+  font-size: 35px;
+}
+
+h3 {
+  font-size: 25px;
+}
+
+h4 { 
+  font-size: 1.5rem;
+}
+
+h5 {
+  font-size: 1rem;
+}
+
+strong {
+  font-weight: bold;
+}
+
+em {
+  font-style: italic;
+}
+
+ul {
+  padding-left: 20px;
+  list-style-type: disc;
+  li {
+    margin-bottom: 15px;
+    color: $kleur2;
+	font-size: 18px;
+	line-height: 27px;
+  }
+}
+
+ol {
+  padding-left: 20px;
+  list-style-type: decimal;
+  li {
+    margin-bottom: 15px;
+    color: $kleur2;
+	font-size: 18px;
+	line-height: 27px;
+  }
+}
+
+blockquote {
+  font-style: italic;
+  color: $kleur1;
+  font-size: 40px;
+  margin-right: 0.5em;
+  padding: 0.5em;
+  line-height: 40px;
+  position: relative;
+  display: inline-block;
+  &::before {
+    content: "\201C";
+    position: absolute;
+    top: 5px;
+    left: -20px;
+    color: $kleur1;
+    font-size: 70px;
+  }
+
+  &::after {
+    content: "\201D";
+    color: $kleur1;
+    position: absolute;
+    bottom: 5px;
+    right: -20px;
+    font-size: 70px;
+  }
+
+  p {
+    color: $kleur2;
+    font-size: 40px;
+    text-align: center;
+  }
+
+
+  cite{
+    color: #8A8A8A;
+    font-size: 30px;
+    text-align: center;
+  }
+}
+
+.white-text {
+  color: $white;
+}
+
+.black-text {
+  color: $black;
+}
+
+.btn, input[type=submit] {
+  padding: 15px 35px;
+  font-size: 18px;
+  font-weight: 400;
+  transition: .4s all;
+  background-color: $kleur1;
+  color: $white;
+  text-decoration: none;
+  border-radius: 0px;
+  text-transform: uppercase;
+  display: inline-flex;
+  align-items: baseline;
+  letter-spacing: 1px;
+  font-weight: bold;
+	border: 0;
+  &.with-icon-start{
+    i{
+      margin-right: 15px;
+    }
+  }
+
+  i {
+    vertical-align: middle;
+    
+  }
+
+  &.alternative{
+    background-color: $kleur2;
+  }
+
+  &:hover{
+    opacity: .8;
+    color: #fff;
+    text-decoration: none;
+  }
+}
+
+.alignright {
+  margin: 20px;
+  float: right;
+}
+
+.alignleft {
+  margin: 20px;
+  float: left;
+}
+
+.container-fluid {
+  padding: 0;
+}
+
+.margin-container {
+  margin: 50px 0;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.embed-container {
+  position: relative;
+  padding-bottom: 56.25%;
+  height: 0;
+  overflow: hidden;
+  max-width: 100%;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.embed-container iframe, .embed-container object, .embed-container embed {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.container{
+  @media(min-width: $screen-xl-max){
+	max-width: $screen-xl-max;
+  }
+
+}
+
+#wpadminbar{
+  opacity:.2;
+  @include transition();
+
+  &:hover{
+    opacity: 1;
+  }
+}
+
+.search-screen {
+	background: rgba(0,0,0,0.65);
+	position: fixed;
+	top: 0;
+	right: -100%;
+	bottom: 0;
+	left: 100%;
+	z-index: 5;
+	height: 100%;
+	z-index: 9999;
+	-webkit-transition: all 0.4s;
+	-moz-transition: all 0.4s;
+	-ms-transition: all 0.4s;
+	-o-transition: all 0.4s;
+	transition: all 0.4s;
+
+	.container {
+		position: relative;
+		top: 50%;
+		-webkit-transform: translateY(-50%);
+		-moz-transform: translateY(-50%);
+		-ms-transform: translateY(-50%);
+		-o-transform: translateY(-50%);
+		transform: translateY(-50%);
+		.input-group {
+			display: flex;
+		}
+		#searchform {
+			background-color: $kleur2;
+			box-shadow: 0 0 4px $kleur2;
+		}
+		.form-control {
+			display: block;
+			width: 100%;
+			background-color: inherit;
+			background-image: none;
+			position: relative;
+			z-index: 2;
+			float: left;
+			margin: 10px;
+			height: 100px;
+			border: none;
+			font-size: 40px;
+			line-height: 80px;
+			color: white;
+			padding: 10px 30px;
+			font-weight: 300;
+			&::-webkit-input-placeholder {
+				color: $kleur4;
+				text-transform: uppercase;
+			}
+			&::-moz-placeholder {
+				color: $kleur4;
+				text-transform: uppercase;
+			}
+			&:-ms-input-placeholder {
+				color: $kleur4;
+				text-transform: uppercase;
+			}
+			&:-moz-placeholder {
+				color: $kleur4;
+				text-transform: uppercase;
+			}
+			&:focus {
+				outline: none;
+				border: none;
+			}
+			&:-webkit-autofill, &:-webkit-autofill:hover, &:-webkit-autofill:focus {
+				background: $kleur2 !important;
+			}
+		}
+		.btn-search {
+			margin: 10px;
+			background: transparent;
+			border: 3px solid $white;
+			border-radius: 500px;
+			padding: 3px;
+			color: white;
+			font-size: 20px;
+			height: 100px;
+			width: 100px;
+			cursor: pointer;
+			@include transition();
+
+			span {
+				font-size: 40px;
+				color: #fff;
+				-webkit-transition: all 0.4s;
+				-moz-transition: all 0.4s;
+				-ms-transition: all 0.4s;
+				-o-transition: all 0.4s;
+				transition: all 0.4s;
+			}
+			&:hover {
+				border: 3px solid $kleur1;
+
+				i {
+					transform: scale(.95);
+					background-color: $white;
+					color: $kleur1;
+				}
+			}
+			&:focus {
+				border: 3px solid $kleur1;
+			}
+			&:active {
+				border: 3px solid $kleur1;
+			}
+
+			i {
+				font-size: 40px;
+				background-color: $kleur1;
+				color: white;
+				background-color: $kleur1;
+				border-radius: 500px;
+				padding: 24px;
+				@include transition();
+			}
+		}
+		.btn-search-close {
+			margin: 10px;
+			padding: 8px;
+			border: none;
+			font-size: 20px;
+			height: 100px;
+			width: 100px;
+			@include transition();
+			background: inherit;
+			color: $white;
+			cursor: pointer;
+
+			span {
+				background-color: $kleur1;
+				border-radius: 500px;
+				font-size: 40px;
+				color: #fff;
+				-webkit-transition: all 0.4s;
+				-moz-transition: all 0.4s;
+				-ms-transition: all 0.4s;
+				-o-transition: all 0.4s;
+				transition: all 0.4s;
+				color: #a98c43;
+			}
+
+			i {
+				vertical-align: middle;
+				font-size: 30px;
+				@include transition();
+			}
+
+			&:hover {
+				span {
+					color: #1d1d1b;
+				}
+
+				i {
+					transform: scale(0.9);
+				}
+			}
+			&:focus {
+				span {
+					color: #1d1d1b;
+				}
+			}
+			&:active {
+				span {
+					color: #1d1d1b;
+				}
+			}
+		}
+	}
+  .input-group-btn {
+    width: auto;
+    font-size: 35px;
+  }
+}
+.search-screen.active {
+	opacity: 1;
+	right: 0;
+	left: 0;
+}
+@media (max-width: 991px) {
+	.search-screen {
+		.container {
+			.form-control {
+				font-size: 26px;
+				height: 60px;
+				line-height: 60px;
+				padding-right: 0;
+				margin: 0;
+				padding-left: 5px;
+			}
+			.btn-search {
+				width: 60px;
+				height: 60px;
+				margin: 0;
+				span {
+					font-size: 20px;
+				}
+
+				i {
+					padding: 12px;
+					font-size: 20px;
+				}
+			}
+			.btn-search-close {
+				width: 60px;
+				height: 60px;
+				margin: 0;
+
+				span {
+					font-size: 20px;
+				}
+
+				i {
+					font-size: 20px;
+				}
+			}
+		}
+	}
+}
+@media (max-width: 400px) {
+	.search-screen {
+		.container {
+			.form-control {
+				font-size: 6vw;
+			}
+		}
+	}
+}
+
+.admin-bar{
+	header{
+		margin-top: 32px;
+	}
+}

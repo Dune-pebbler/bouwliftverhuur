@@ -1,0 +1,180 @@
+form{
+    padding: 25px;
+    background-color: #fff;
+
+    .form-group{
+        margin-bottom: 15px;
+
+        > label{
+            font-weight: bold;
+            display: block;
+            // margin-bottom: 5px;
+            font-size: 23px;
+        }
+        .wpcf7-form-control-wrap{
+            margin-top: 10px;
+            display: block;
+        }
+        
+        input:not([type=checkbox]):not([type=radio]):not([type=submit]), textarea{
+            padding: 10px;
+            border: 1px solid #ccc;
+            display: block;
+            width: 100%;
+            font-family: $font;
+        }
+    }
+}
+
+.form-offerte-container, .contact-container {
+    position: relative;
+    padding: 50px 0;
+
+    #gform_2 {
+        padding: 0;
+    }
+
+    .gform_heading {
+        border-bottom: 1px solid $kleur2;
+        padding: 20px 0;
+
+        h2 {
+            position: relative;
+            font-size: 35px;
+            font-weight: 200;
+            transform: translateX(-50%);
+            left: 50%;
+            color: $kleur4;
+            text-transform: uppercase;
+            margin: 0 0 60px;
+            padding: 0 0 10px;
+            border-bottom: 4px solid $kleur1;
+            display: inline-block;
+            font-weight: bold;
+            text-align: center;
+        }
+    
+        .gform_description {
+            position: relative;
+            display: block;
+            text-align: center;
+            padding: 0 0 20px;
+            color: $kleur2;
+            width: 100%;
+        }
+    }
+
+    form {
+        padding: 25px 0;
+
+        .gsection {
+            border: none !important;
+        }
+
+        .gsection_title {
+            font-size: 20px;
+            margin: 25px 0 0;
+            font-weight: 600;
+        }
+
+
+        input::placeholder, label, textarea::placeholder {
+            color: $kleur4;
+        }
+
+        .file-upload-field {
+            .gfield_description, .gform_fileupload_rules {
+                padding: 0 !important;
+                margin: 0 !important;
+            }
+
+            label {
+                position: relative;
+                width: 100%;
+                border: 1px solid black;
+                pointer-events: none;
+                padding: 5px !important;
+                overflow: hidden;
+                font-size: 0 !important;
+                z-index: 100;
+                
+                &::before {
+                    content: attr(data-before);
+                    font-size: 16px !important;
+                    padding: 10px 0 !important;
+                    font-weight: 100;
+                    position: absolute;
+                    overflow: hidden;
+                    display: block;
+                    float: left;
+                    z-index: 99;
+                    width: calc(100% - 20px);
+                    left: 10px;
+                    top: 0;
+                    color: $kleur4;
+                    cursor: text;
+                }
+
+                &::after {
+                    content: "Bestand uploaden";
+                    font-size: 16px !important;
+                    position: relative;
+                    display: block;
+                    background-color: $kleur4;
+                    width: fit-content;
+                    padding: 5px 10px;
+                    float: right;
+                    top: 0;
+                    color: $white;
+                    cursor: pointer;
+                    pointer-events: all;
+                    z-index: 101;
+                    @include transition();
+                }
+
+
+                &:hover::after {
+                    background-color: $kleur2;
+                }
+            }
+
+            input[type="file"]{
+                display: none;
+            }
+        }
+
+        .gfield-choice-input {
+            width: 24px;
+            height: 24px;
+            cursor: pointer;
+        }
+
+        .privacy-button {
+            input {
+                float: left;
+            }
+
+            label {
+                float: left;
+                padding: 0 0 0 5px;
+            }
+
+            strong {
+                color: red !important;
+            }        
+        }
+
+        input[type="submit"]{
+            cursor: pointer;
+        }
+    }
+}
+
+.disabled {
+    pointer-events: none !important;
+    background-color: #ccc !important;
+}
+
+.grecaptcha-badge {
+    z-index: 1000000000;
+}

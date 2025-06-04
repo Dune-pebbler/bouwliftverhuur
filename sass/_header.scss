@@ -1,0 +1,164 @@
+header {
+  position: fixed;
+  width: 100%;
+  top: 0;
+  left: 0;
+  z-index: 9999;
+  padding: 40px 0px;
+  background-color: $kleur2;
+  height: $header-height;
+  @include transition();
+  
+  .container {
+    position: relative;
+    height: 100%;
+    padding: 0;
+    @include center();
+
+    .row {
+      width: 100%;
+    }
+
+    .offerte-container {
+      position: absolute;
+      top: calc(100% + 40px);
+      right: 15px;
+      @include transition();
+
+      @media(max-width: $screen-md-max){
+        position: fixed;
+        display: block;
+        top: unset;
+        // left: 0;
+        bottom: 0;
+        opacity: 1;
+
+        a {
+          font-size: 14px;
+          padding: 5px 15px;
+          margin-right: 15px;
+        }
+
+        &.hide {
+          opacity: 0;
+          bottom: -10%;
+        }
+      }
+    }
+  }
+
+  .logo {
+    float: left;
+    height: 100%;
+    width: 100%;
+    
+    @include center();
+    @include transition();
+
+    @media (max-width: $screen-lg-max){
+      max-width: 320px;
+    }
+    
+    a {
+      height: 100%;
+      width: 100%;
+      padding: 0;
+      margin: 0;
+
+      svg, img {
+        position: relative;
+        border-radius: 0;
+        top: 50%;
+        width: 100%;
+        z-index: 10000;
+        transform: translateY(-50%);
+        @include ycenter();
+        @include transition();
+      }
+    }
+  }
+
+  &.scrolling-down {
+    padding: 0 0;
+    box-shadow: 0 0 8px rgba(40, 40, 40, .5);
+    height: calc(#{$header-height} - 60px);
+
+    > .container .offerte-container {
+      @media(min-width: $screen-md-max){
+        top: 100% !important;
+      }
+
+    }
+    
+    .contact-options {
+      a, button {
+        i {
+          padding: 9px;
+          font-size: 18px;
+        }
+      }
+    }
+  }
+
+  .contact-options {
+    position: relative;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    top: 50%;
+    transform: translateY(-50%);
+
+    a, button {
+      padding: 4px;
+      border: 2px solid $white;
+      background-color: transparent;
+      border-radius: 500px;
+      margin: 5px;
+      cursor: pointer;
+      @include transition();
+
+      i {
+        padding: 14px;
+        font-size: 20px;
+        color: $white;
+        background-color: $kleur1;
+        border-radius: 500px;
+        @include transition();
+
+        @media(max-width: $screen-xs-max){
+          font-size: 16px;
+          padding: 8px;
+        }
+      }
+
+      &:hover {
+        border-color: $kleur1;
+
+        i {
+          background-color: $white;
+          color: $kleur1;
+        }
+      }   
+    }
+
+    #launch-search {
+      border: none;
+      display: block;
+      background: none;
+      border-radius: 50px;
+      width: 60px;
+      height: 60px;
+    }
+  }
+
+  @media(max-width: $screen-xs-max) {
+    padding: 0 0;
+    box-shadow: 0 0 8px rgba(40, 40, 40, .5);
+    height: calc(#{$header-height} - 60px);
+
+    .contact-options a i {
+      padding: 8px;
+      font-size: 18px;
+    }
+  }
+}

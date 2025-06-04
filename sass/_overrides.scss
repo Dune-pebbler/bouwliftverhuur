@@ -1,0 +1,28 @@
+.fa {
+    &.fa-phone {
+        transform: rotate(90deg);
+    }
+}
+
+.fal {
+    &.fa-arrow-alt-left, &.fa-arrow-alt-right {
+        font-weight: 900;
+    }
+}
+
+.hide-mobile {
+    @media(max-width: $screen-lg-max){
+        display: none;
+    }
+}
+
+.btn {
+    .btn-info {
+        background-color: #B5B5B5 !important;
+        color: white;
+    }
+}
+
+.st0 {
+    fill: $white !important;
+}
