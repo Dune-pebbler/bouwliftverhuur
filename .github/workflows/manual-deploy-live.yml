@@ -21,6 +21,7 @@ jobs:
           port: 21
           security: loose
           timeout: 180000
+          connection-mode: passive  
           exclude: |
             **/.git*
             **/.git*/**
