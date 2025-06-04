@@ -44,14 +44,14 @@
     <header>
       <div class="container">
         <div class="row">
-          <div class="col-6 col-xl-3">
+          <div class="col-6 col-xl-4">
             <div class="logo">
               <a href="<?= site_url(); ?>">
-                <?= get_svg(get_template_directory_uri() . '/img/logo.svg'); ?>
+                <img src="<?= get_template_directory_uri() . '/img/logo-meiden.png';?>">
               </a>
             </div>
           </div>
-          <div class="col-12 col-xl-7 order-1 order-xl-0">
+          <div class="col-12 col-xl-6 order-1 order-xl-0">
             <nav class="menu-nav">
               <?php
               wp_nav_menu(array(
